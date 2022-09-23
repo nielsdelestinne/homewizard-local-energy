@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {P1MeterApiService} from "./p1-meter-api.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'homewizard-local-energy';
+
+  public data$ = this.p1MeterApiService.retrieveData();
+
+  constructor(private p1MeterApiService: P1MeterApiService) {
+  }
+
 }

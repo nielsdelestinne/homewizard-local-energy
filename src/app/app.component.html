@@ -1,7 +1,12 @@
-<header class="container-fluid">
-  <div class="row justify-content-end py-1">
-    <div class="col-lg-2 col-md-3 col-sm-4">
-      <span>70% 📶</span> | <span>⚙️</span>
+<ng-container *ngIf="data$ | async as data">
+  <header class="container-fluid">
+    <div class="row justify-content-end py-1">
+      <div class="col-lg-2 col-md-3 col-sm-4">
+        <span>{{data.wifi_strength}}% 📶</span> | <span>⚙️</span>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
+  <main>
+    {{data |json}}
+  </main>
+</ng-container>
