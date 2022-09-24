@@ -8,3 +8,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Todo
 - [ ] Remove bootstrap component library
+- [ ] Create global changeable settings (interval, p1 meter IP,...)

@@ -2,11 +2,14 @@
   <header class="container-fluid">
     <div class="row justify-content-end py-1">
       <div class="col-lg-2 col-md-3 col-sm-4">
-        <span>{{data.wifi_strength}}% 📶</span> | <span>⚙️</span>
+        <span>{{data.wifiStrength.value}}% 📶</span> | <span>⚙️</span>
       </div>
     </div>
   </header>
   <main>
+
+    <app-billboard [billboardDate]="data.currentInjectedPowerInKwh"></app-billboard>
+
     {{data |json}}
     <div echarts [options]="options" [merge]="updateOptions" class="demo-chart"></div>
   </main>

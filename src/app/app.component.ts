@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {P1MeterApiService} from "./p1-meter-api.service";
+import {P1MeterApiService} from "./p1-meter-api/p1-meter-api.service";
 import {Observable, tap} from "rxjs";
 
 @Component({
@@ -27,7 +27,12 @@ export class AppComponent implements OnInit {
     this.data.push(this.formatData(data));
     this.updateOptions = {
       series: [{
-        data: this.data
+        data: this.data,
+        lineStyle: {
+          // Straight line indicator style settings
+          color: this.data.length % 2 !== 0 ? '#ffffff' : '#801c1c',
+          type: 'solid'
+        },
       }]
     };
   }));
@@ -56,10 +61,23 @@ export class AppComponent implements OnInit {
         }
       },
       xAxis: {
-        type: 'time',
+        axisLine: {
+          lineStyle: {
+            color: '#fd31e4'
+          }
+        },
+        // splitArea: {
+        //   show: true,
+        //   areaStyle: {
+        //     color: ['rgba(250,250,250,0.1)', 'rgba(200,200,200,0.1)']
+        //   }
+        // },
         splitLine: {
-          show: false
-        }
+          lineStyle: {
+            color: ['#eee']
+          }
+        },
+        type: 'time',
       },
       yAxis: {
         type: 'value',
@@ -71,6 +89,14 @@ export class AppComponent implements OnInit {
       series: [{
         name: 'Mocking Data',
         type: 'line',
+        areaStyle: {
+          color: ['rgba(250,250,250,0.1)', 'rgba(200,200,200,0.1)']
+        },
+        lineStyle: {
+          // Straight line indicator style settings
+          color: this.data.length % 2 !== 0 ? '#ffffff' : '#801c1c',
+          type: 'solid'
+        },
         showSymbol: false,
         emphasis: {
           line: false,
@@ -81,17 +107,19 @@ export class AppComponent implements OnInit {
   }
 
   formatData(data: any) {
-    this.iteration += 1;
     const now = new Date(Date.now());
     this.value = data['active_power_w']
     return {
       name: [now.getHours(), now.getMinutes(), now.getSeconds()].join(':') + ``,
       value: [
         now,
-        this.value
+        now.getSeconds() % 2 == 0 ? this.value : this.value - 250
       ]
     };
   }
 
 
+  getDa() {
+    return {name: 'Energy', value: 50};
+  }
 }
