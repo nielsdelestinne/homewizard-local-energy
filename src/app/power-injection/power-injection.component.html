@@ -1,4 +1,4 @@
-<div class="card p-3" [ngClass]="powerInjectionScale | toScaleElementUsingCurrentPower : powerInjection.value | mapToColor">
+<div class="card svg-background p-3 p-lg-5" [ngClass]="powerInjectionScale | toScaleElementUsingCurrentPower : powerInjection.value | mapToColor">
   <div class="card-body">
     <h2 class="card-title">
       {{powerInjection.value | number: '1.3-3'}}

@@ -1,10 +1,10 @@
 <main *ngIf="data$ | async as data" class="mx-2 my-3 mx-lg-5 my-lg-5">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-8 col-md-9 col-sm-12 mb-3 mb-lg-5">
+      <div class="col-12 col-lg-8 mb-3 mb-lg-5">
         <app-power-injection [powerInjection]="data.currentInjectedPower"></app-power-injection>
       </div>
-      <div class="col-lg-4 col-md-3 col-sm-12 mb-3 mb-lg-5">
+      <div class="col-12 col-lg-4 mb-3 mb-lg-5">
         <app-wifi-strength [wifiStrength]="data.wifiStrength"></app-wifi-strength>
       </div>
     </div>

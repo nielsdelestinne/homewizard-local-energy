@@ -1,4 +1,4 @@
-<div class="card p-3" [ngClass]="wifiStrengthScale | toScaleElementUsingWifiStrength : wifiStrength.value | mapToColor">
+<div class="card svg-background p-3 p-lg-5" [ngClass]="wifiStrengthScale | toScaleElementUsingWifiStrength : wifiStrength.value | mapToColor">
   <div class="card-body">
     <h2 class="card-title">
       {{wifiStrength.value | number: '2.0-0'}}
