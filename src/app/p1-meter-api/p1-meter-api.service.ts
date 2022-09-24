@@ -24,7 +24,7 @@ export class P1MeterApiService {
 
   private static mapToData(rawData: P1RawDataTO): P1Data {
     return {
-      currentInjectedPower: {name: 'Injected power', value: rawData.active_power_w / -1_000, unit: Unit.Kwh},
+      injectedPower: {name: 'Injected power', value: rawData.active_power_w / -1_000, unit: Unit.Kwh},
       totalGasInM3: {name: 'Total Gas', value: rawData.total_gas_m3, unit: Unit.m3},
       totalExportedPowerT1: {name: 'Total exported power T1', value: rawData.total_power_export_t1_kwh, unit: Unit.Kwh},
       totalExportedPowerT2: {name: 'Total exported power T2', value: rawData.total_power_export_t2_kwh, unit: Unit.Kwh},

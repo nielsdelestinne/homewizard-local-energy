@@ -1,5 +1,5 @@
 export type P1Data = Readonly<{
-  currentInjectedPower: NamedNumericalValue;
+  injectedPower: NamedNumericalValue;
   totalGasInM3: NamedNumericalValue;
   totalExportedPowerT1: NamedNumericalValue;
   totalExportedPowerT2: NamedNumericalValue;

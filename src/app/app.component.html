@@ -2,14 +2,18 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-lg-8 mb-3 mb-lg-5">
-        <app-power-injection [powerInjection]="data.currentInjectedPower"></app-power-injection>
+        <app-power-injection [powerInjection]="data.injectedPower"></app-power-injection>
       </div>
       <div class="col-12 col-lg-4 mb-3 mb-lg-5">
         <app-wifi-strength [wifiStrength]="data.wifiStrength"></app-wifi-strength>
       </div>
     </div>
+    <div class="row">
+      <div class="col-12">
+        <app-power-injection-graph [powerInjection]="data.injectedPower"></app-power-injection-graph>
+      </div>
+    </div>
   </div>
 
   {{data |json}}
-  <div echarts [options]="options" [merge]="updateOptions" class="demo-chart"></div>
 </main>
