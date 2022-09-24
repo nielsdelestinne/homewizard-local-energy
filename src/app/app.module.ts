@@ -1,12 +1,10 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {NgxEchartsModule} from "ngx-echarts";
 import {PowerInjectionComponent} from './power-injection/power-injection.component';
-import {SentimentalColoringDirective} from './sentimental-coloring.directive';
 import {ToScaleElementUsingCurrentPowerPipe} from './power-injection/to-scale-element-using-current-power.pipe';
 import {MapToColorPipe} from "./shared/scale/map-to-color.pipe";
 import {MapToIconPipe} from "./shared/scale/map-to-icon.pipe";
@@ -19,7 +17,6 @@ import { TotalPowerComponent } from './total-power/total-power.component';
   declarations: [
     AppComponent,
     PowerInjectionComponent,
-    SentimentalColoringDirective,
     ToScaleElementUsingCurrentPowerPipe,
     ToScaleElementUsingWifiStrengthPipe,
     MapToColorPipe,
@@ -30,7 +27,6 @@ import { TotalPowerComponent } from './total-power/total-power.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
