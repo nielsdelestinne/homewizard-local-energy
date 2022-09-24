@@ -8,4 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Todo
 - [ ] Remove bootstrap component library
-- [ ] Create global changeable settings (interval, p1 meter IP,...)
+- [ ] Create global changeable settings (interval, p1 meter IP, How long to keep graph (15m),...)
+- [ ] Format hours, minutes, seconds with leading zero's in tooltip of graph
+- [ ] Improve reuse between both power-injection components
+- [ ] Improve reuse between cards (all components use & style them separately now)
