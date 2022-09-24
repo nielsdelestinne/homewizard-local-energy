@@ -1,0 +1,25 @@
+.card {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px;
+}
+
+.imported {
+  background-color: var(--bs-blue);
+}
+
+.exported {
+  background-color: var(--bs-green);
+}
+
+.text-color-black {
+  color: var(--bs-black);
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--bs-white);
+}
+
+.text-muted {
+  color: var(--bs-gray-200) !important;
+}

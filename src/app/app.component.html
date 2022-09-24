@@ -9,8 +9,16 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 mb-3 mb-lg-5">
         <app-power-injection-graph [powerInjection]="data.injectedPower"></app-power-injection-graph>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6 mb-3 mb-lg-5">
+        <app-total-power title="Injected power" theme="exported" [totalPowerT1]="data.totalExportedPowerT1" [totalPowerT2]="data.totalExportedPowerT2"></app-total-power>
+      </div>
+      <div class="col-12 col-lg-6 mb-3 mb-lg-5">
+        <app-total-power title="Imported power" theme="imported" [totalPowerT1]="data.totalImportedPowerT1" [totalPowerT2]="data.totalImportedPowerT2"></app-total-power>
       </div>
     </div>
   </div>
