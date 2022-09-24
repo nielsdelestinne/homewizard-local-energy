@@ -11,11 +11,11 @@ export class PowerInjectionComponent {
   @Input() powerInjection!: NamedNumericalValue
 
   readonly powerInjectionScale = {
-    veryPositive: {color: 'very-positive', icon: 'bi-chevron-double-up'},
-    positive: {color: 'positive', icon: 'bi-chevron-up'},
-    negative: {color: 'negative', icon: 'bi-chevron-down'},
-    veryNegative: {color: 'very-negative', icon: 'bi-chevron-double-down'},
-    extremelyNegative: {color: 'extremely-negative', icon: 'bi-exclamation-octagon-fill'},
+    veryGood: {color: 'very-good', icon: 'bi-chevron-double-up'},
+    good: {color: 'good', icon: 'bi-chevron-up'},
+    neutral: {color: 'neutral', icon: 'bi-chevron-down'},
+    bad: {color: 'bad', icon: 'bi-chevron-double-down'},
+    veryBad: {color: 'very-bad', icon: 'bi-exclamation-octagon-fill'},
   }
 }
 

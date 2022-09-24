@@ -26,3 +26,23 @@ $font-weight-base: 600;
 html, body {
   height: 100%;
 }
+
+.very-good {
+  background-color: var(--bs-teal);
+}
+
+.good {
+  background-color: var(--bs-green);
+}
+
+.neutral {
+  background-color: var(--bs-orange);
+}
+
+.bad {
+  background-color: var(--bs-pink);
+}
+
+.very-bad {
+  background-color: var(--bs-red);
+}

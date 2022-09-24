@@ -1,8 +1,8 @@
-<div class="card p-3" [ngClass]="powerInjectionScale | mapToColorAndIcon : powerInjection.value | mapToColor">
+<div class="card p-3" [ngClass]="powerInjectionScale | toScaleElementUsingCurrentPower : powerInjection.value | mapToColor">
   <div class="card-body">
     <h2 class="card-title">
       {{powerInjection.value | number: '1.3-3'}}
-      <i [ngClass]="powerInjectionScale | mapToColorAndIcon : powerInjection.value | mapToIcon"></i>
+      <i [ngClass]="powerInjectionScale | toScaleElementUsingCurrentPower : powerInjection.value | mapToIcon"></i>
     </h2>
     <h4 class="card-subtitle mb-2 text-muted">{{powerInjection.name}} | {{powerInjection.unit}}</h4>
   </div>

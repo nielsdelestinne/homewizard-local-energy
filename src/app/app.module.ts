@@ -8,18 +8,22 @@ import {HttpClientModule} from "@angular/common/http";
 import {NgxEchartsModule} from "ngx-echarts";
 import {PowerInjectionComponent} from './power-injection/power-injection.component';
 import {SentimentalColoringDirective} from './sentimental-coloring.directive';
-import { MapToColorAndIconPipe } from './power-injection/map-to-color-and-icon.pipe';
-import {MapToColorPipe} from "./power-injection/map-to-color.pipe";
-import {MapToIconPipe} from "./power-injection/map-to-icon.pipe";
+import {ToScaleElementUsingCurrentPowerPipe} from './power-injection/to-scale-element-using-current-power.pipe';
+import {MapToColorPipe} from "./shared/scale/map-to-color.pipe";
+import {MapToIconPipe} from "./shared/scale/map-to-icon.pipe";
+import {WifiStrengthComponent} from './wifi-strength/wifi-strength.component';
+import {ToScaleElementUsingWifiStrengthPipe} from "./wifi-strength/to-scale-element-using-wifi-strength.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
     PowerInjectionComponent,
     SentimentalColoringDirective,
-    MapToColorAndIconPipe,
+    ToScaleElementUsingCurrentPowerPipe,
+    ToScaleElementUsingWifiStrengthPipe,
     MapToColorPipe,
-    MapToIconPipe
+    MapToIconPipe,
+    WifiStrengthComponent
   ],
   imports: [
     BrowserModule,

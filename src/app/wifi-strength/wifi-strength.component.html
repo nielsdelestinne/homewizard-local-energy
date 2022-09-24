@@ -1,0 +1,9 @@
+<div class="card p-3" [ngClass]="wifiStrengthScale | toScaleElementUsingWifiStrength : wifiStrength.value | mapToColor">
+  <div class="card-body">
+    <h2 class="card-title">
+      {{wifiStrength.value | number: '2.0-0'}}
+      <i [ngClass]="wifiStrengthScale | toScaleElementUsingWifiStrength : wifiStrength.value | mapToIcon"></i>
+    </h2>
+    <h4 class="card-subtitle mb-2 text-muted">{{wifiStrength.name}} | {{wifiStrength.unit}}</h4>
+  </div>
+</div>
