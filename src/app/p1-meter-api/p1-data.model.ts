@@ -1,14 +1,21 @@
 export type P1Data = Readonly<{
-  currentInjectedPowerInKwh: NamedValue<number>;
-  totalGasInM3: NamedValue<number>;
-  totalExportedPowerT1InKwh: NamedValue<number>;
-  totalExportedPowerT2InKwh: NamedValue<number>;
-  totalImportedPowerT1InKwh: NamedValue<number>;
-  totalImportedPowerT2InKwh: NamedValue<number>;
-  wifiStrength: NamedValue<number>
+  currentInjectedPower: NamedNumericalValue;
+  totalGasInM3: NamedNumericalValue;
+  totalExportedPowerT1: NamedNumericalValue;
+  totalExportedPowerT2: NamedNumericalValue;
+  totalImportedPowerT1: NamedNumericalValue;
+  totalImportedPowerT2: NamedNumericalValue;
+  wifiStrength: NamedNumericalValue
 }>
 
-export type NamedValue<T extends string | number> = Readonly<{
+export type NamedNumericalValue = Readonly<{
   name: string,
-  value: T
+  value: number,
+  unit: Unit
 }>
+
+export enum Unit {
+  Kwh = "Kwh",
+  m3 = "m3",
+  percentage = "%",
+}

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map, Observable, switchMap, tap, timer} from "rxjs";
-import {P1Data} from "./p1-data.model";
+import {P1Data, Unit} from "./p1-data.model";
 
 @Injectable({
   providedIn: 'root'
@@ -24,13 +24,13 @@ export class P1MeterApiService {
 
   private static mapToData(rawData: P1RawDataTO): P1Data {
     return {
-      currentInjectedPowerInKwh: {name: 'Injected power (Kwh)', value: rawData.active_power_w / -1_000},
-      totalGasInM3: {name: 'Total Gas (m3)', value: rawData.total_gas_m3},
-      totalExportedPowerT1InKwh: {name: 'Total exported power T1 (Kwh)', value: rawData.total_power_export_t1_kwh},
-      totalExportedPowerT2InKwh: {name: 'Total exported power T2 (Kwh)', value: rawData.total_power_export_t2_kwh},
-      totalImportedPowerT1InKwh: {name: 'Total imported power T1 (Kwh)', value: rawData.total_power_import_t1_kwh},
-      totalImportedPowerT2InKwh: {name: 'Total imported power T2 (Kwh)', value: rawData.total_power_import_t2_kwh},
-      wifiStrength: {name: 'Wifi strength', value: rawData.wifi_strength}
+      currentInjectedPower: {name: 'Injected power', value: rawData.active_power_w / -1_000, unit: Unit.Kwh},
+      totalGasInM3: {name: 'Total Gas', value: rawData.total_gas_m3, unit: Unit.m3},
+      totalExportedPowerT1: {name: 'Total exported power T1', value: rawData.total_power_export_t1_kwh, unit: Unit.Kwh},
+      totalExportedPowerT2: {name: 'Total exported power T2', value: rawData.total_power_export_t2_kwh, unit: Unit.Kwh},
+      totalImportedPowerT1: {name: 'Total imported power T1', value: rawData.total_power_import_t1_kwh, unit: Unit.Kwh},
+      totalImportedPowerT2: {name: 'Total imported power T2', value: rawData.total_power_import_t2_kwh, unit: Unit.Kwh},
+      wifiStrength: {name: 'Wifi strength', value: rawData.wifi_strength, unit: Unit.percentage}
     }
   }
 

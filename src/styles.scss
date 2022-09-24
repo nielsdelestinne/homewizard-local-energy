@@ -1,7 +1,7 @@
 @import "../node_modules/bootstrap/scss/functions";
 
-$body-bg: #343A40FF;
-$body-color: #FFFFFF;
+$body-bg: #fdfdfd;
+$body-color: #000000;
 $font-weight-base: 600;
 
 @import "../node_modules/bootstrap/scss/variables";
@@ -9,6 +9,8 @@ $font-weight-base: 600;
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
+
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 // Optional parts
 @import "../node_modules/bootstrap/scss/utilities";

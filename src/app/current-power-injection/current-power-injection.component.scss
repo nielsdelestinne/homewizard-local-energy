@@ -1,0 +1,35 @@
+.card {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--bs-white);
+}
+
+.text-muted {
+  color: var(--bs-gray-200) !important;
+}
+
+.very-positive {
+ background-color: var(--bs-teal);
+}
+
+.positive {
+ background-color: var(--bs-green);
+}
+
+.negative {
+ background-color: var(--bs-orange);
+}
+
+.very-negative {
+ background-color: var(--bs-pink);
+}
+
+.extremely-negative {
+ background-color: var(--bs-red);
+}
+
+
