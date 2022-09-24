@@ -3,6 +3,8 @@
 A responsive dashboard compatible with [HomeWizard's P1 Energy Meter](https://www.homewizard.com/).
 - The dashboard relies on the [P1's Local API](https://homewizard-energy-api.readthedocs.io/) being enabled
 
+![dashboard.png](dashboard.png)
+
 ## Run locally
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
