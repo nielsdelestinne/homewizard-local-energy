@@ -1,5 +1,7 @@
 # HomeWizard Local Energy
 
+> Note: Still under development > Alpha
+
 A responsive dashboard compatible with [HomeWizard's P1 Energy Meter](https://www.homewizard.com/).
 - The dashboard relies on the [P1's Local API](https://homewizard-energy-api.readthedocs.io/) being enabled
 
