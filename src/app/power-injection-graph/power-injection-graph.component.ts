@@ -101,6 +101,11 @@ export class PowerInjectionGraphComponent {
           }
         },
       },
+      dataZoom: [
+        {
+          type: 'inside',
+        },
+      ],
       series: [{
         name: 'Power Injection',
         type: 'line',
