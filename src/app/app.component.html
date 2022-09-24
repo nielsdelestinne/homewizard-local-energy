@@ -8,7 +8,7 @@
   </header>
   <main>
 
-    <app-current-power-injection [currentPowerInjection]="data.currentInjectedPower"></app-current-power-injection>
+    <app-power-injection [powerInjection]="data.currentInjectedPower"></app-power-injection>
 
     {{data |json}}
     <div echarts [options]="options" [merge]="updateOptions" class="demo-chart"></div>

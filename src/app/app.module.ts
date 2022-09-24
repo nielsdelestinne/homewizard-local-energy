@@ -6,16 +6,16 @@ import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from "@angular/common/http";
 import {NgxEchartsModule} from "ngx-echarts";
-import {CurrentPowerInjectionComponent} from './current-power-injection/current-power-injection.component';
+import {PowerInjectionComponent} from './power-injection/power-injection.component';
 import {SentimentalColoringDirective} from './sentimental-coloring.directive';
-import { MapToColorAndIconPipe } from './current-power-injection/map-to-color-and-icon.pipe';
-import {MapToColorPipe} from "./current-power-injection/map-to-color.pipe";
-import {MapToIconPipe} from "./current-power-injection/map-to-icon.pipe";
+import { MapToColorAndIconPipe } from './power-injection/map-to-color-and-icon.pipe';
+import {MapToColorPipe} from "./power-injection/map-to-color.pipe";
+import {MapToIconPipe} from "./power-injection/map-to-icon.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CurrentPowerInjectionComponent,
+    PowerInjectionComponent,
     SentimentalColoringDirective,
     MapToColorAndIconPipe,
     MapToColorPipe,

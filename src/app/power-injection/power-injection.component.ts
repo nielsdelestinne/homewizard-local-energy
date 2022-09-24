@@ -2,15 +2,15 @@ import {Component, Input} from '@angular/core';
 import {NamedNumericalValue} from "../p1-meter-api/p1-data.model";
 
 @Component({
-  selector: 'app-current-power-injection',
-  templateUrl: './current-power-injection.component.html',
-  styleUrls: ['./current-power-injection.component.scss']
+  selector: 'app-power-injection',
+  templateUrl: './power-injection.component.html',
+  styleUrls: ['./power-injection.component.scss']
 })
-export class CurrentPowerInjectionComponent {
+export class PowerInjectionComponent {
 
-  @Input() currentPowerInjection!: NamedNumericalValue
+  @Input() powerInjection!: NamedNumericalValue
 
-  readonly currentPowerInjectionScale = {
+  readonly powerInjectionScale = {
     veryPositive: {color: 'very-positive', icon: 'bi-chevron-double-up'},
     positive: {color: 'positive', icon: 'bi-chevron-up'},
     negative: {color: 'negative', icon: 'bi-chevron-down'},

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {ColorAndIcon, CurrentPowerInjectionScale} from "./current-power-injection-scale.model";
+import {ColorAndIcon, PowerInjectionScale} from "./power-injection-scale.model";
 
 @Pipe({
   name: 'mapToColor'

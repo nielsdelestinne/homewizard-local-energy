@@ -1,4 +1,4 @@
-export type CurrentPowerInjectionScale = Readonly<{
+export type PowerInjectionScale = Readonly<{
   veryPositive: ColorAndIcon;
   positive: ColorAndIcon;
   negative: ColorAndIcon;
