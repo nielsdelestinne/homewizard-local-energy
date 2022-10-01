@@ -52,13 +52,12 @@ Create the Android project (once per local repo)
 - `npx cap add android`
 
 Sync the web-app with the Android app
-- `npx cap sync`
-- Or, use `npm run build` (as it included the `sync` command)
+- Use `npm run build` (as it includes the `cap sync` command)
 
 > `android:usesCleartextTraffic="true"` needs to be added to the Android manifest (application element) to allow for http communication with the local API
 
-For building the Android app, open Android Studio using:
-- `npx cap open android`
+For building the Android app as an APK, open Android Studio using:
+- `npm run android`
 
 ## Development Todos
 - [ ] Improve reuse between both power-injection components

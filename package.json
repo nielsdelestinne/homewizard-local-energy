@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build && npx cap sync",
+    "android": "npx cap open android",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
