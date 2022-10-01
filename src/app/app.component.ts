@@ -18,4 +18,7 @@ export class AppComponent {
     return this.settingsService.settings().graphBufferSizeInMinutes;
   }
 
+  refresh() {
+    window.location.reload()
+  }
 }
