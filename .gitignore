@@ -7,9 +7,6 @@
 /out-tsc
 /bazel-out
 
-# Android
-/android
-
 # Node
 /node_modules
 npm-debug.log
