@@ -24,7 +24,7 @@ The P1 meter is pollable each 1s, _this rate is used & hard-coded_.
 - View the historical amount of power you have injected (day v.s. night / weekend)
 - View the historical amount of power you have imported (day v.s. night / weekend)
 
-![dashboard.png](dashboard.png)
+![web-app-dashboard.png](web-app-dashboard.png)
 
 ### Settings
 
@@ -32,10 +32,7 @@ The following settings can be changed using the gear icon on the top-right.
 - The local IP of the P1 meter's local API
 - The buffer size in minutes of data that graph widget will display
   - E.g. with a buffer size of 15 minutes & a hard-coded polling interval of 1 second, the graph will display 900 data points.
-
-![settings.png](settings.png)
-
-_Changing these settings requires a browser refresh / restart, for now._
+- Show or hide the x-axis labels of the graph
 
 ## Web app
 
