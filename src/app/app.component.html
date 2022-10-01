@@ -12,8 +12,8 @@
   </div>
 </header>
 
-<main *ngIf="data$ | async as data" class="mx-2 mb-3 mt-1 mx-lg-5 mb-lg-5 mt-lg-2">
-  <div class="container-fluid">
+<main class="mx-2 mb-3 mt-1 mx-lg-5 mb-lg-5 mt-lg-2">
+  <div class="container-fluid" *ngIf="data$ | async as data else loading">
     <div class="row">
       <div class="col-12 col-lg-8 mb-3 mb-lg-5 order-1 order-lg-1">
         <app-power-injection [powerInjection]="data.injectedPower"></app-power-injection>
@@ -37,4 +37,33 @@
       </div>
     </div>
   </div>
+
+  <ng-template #loading>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card p-3 p-lg-5">
+            <div class="card-body">
+              <h2 class="card-title">
+                Fetching your data...
+                <i *ngIf="apiError" class="bi bi bi-exclamation-circle"></i>
+                <div *ngIf="!apiError" class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </h2>
+              <ng-container *ngIf="apiError">
+                <h4 *ngIf="apiError" class="card-subtitle mb-2 text-muted">The data could not be retrieved
+                  from {{localApiIP}}.</h4>
+                <div class="p-3 bg-danger bg-opacity-10 border border-dark rounded">
+                  {{apiError | json}}
+                </div>
+              </ng-container>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
 </main>
