@@ -10,8 +10,12 @@ import {MapToColorPipe} from "./shared/scale/map-to-color.pipe";
 import {MapToIconPipe} from "./shared/scale/map-to-icon.pipe";
 import {WifiStrengthComponent} from './wifi-strength/wifi-strength.component';
 import {ToScaleElementUsingWifiStrengthPipe} from "./wifi-strength/to-scale-element-using-wifi-strength.pipe";
-import { PowerInjectionGraphComponent } from './power-injection-graph/power-injection-graph.component';
-import { TotalPowerComponent } from './total-power/total-power.component';
+import {PowerInjectionGraphComponent} from './power-injection-graph/power-injection-graph.component';
+import {TotalPowerComponent} from './total-power/total-power.component';
+import {SettingsComponent} from './settings/settings.component';
+import {RouterModule} from "@angular/router";
+import {AppRoutingModule} from "./app-routing.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,14 +27,18 @@ import { TotalPowerComponent } from './total-power/total-power.component';
     MapToIconPipe,
     WifiStrengthComponent,
     PowerInjectionGraphComponent,
-    TotalPowerComponent
+    TotalPowerComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
+    AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

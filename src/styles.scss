@@ -2,6 +2,8 @@
 
 $body-bg: #fdfdfd;
 $body-color: #000000;
+$link-color: #2f2f2f;
+$link-hover-color: #000000;
 $font-weight-base: 600;
 
 @import "../node_modules/bootstrap/scss/variables";
@@ -20,6 +22,9 @@ $font-weight-base: 600;
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/helpers";
 @import "../node_modules/bootstrap/scss/progress";
+@import "../node_modules/bootstrap/scss/offcanvas";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/buttons";
 
 @import "../node_modules/bootstrap/scss/utilities/api";
 

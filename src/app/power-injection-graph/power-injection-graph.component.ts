@@ -10,9 +10,6 @@ import {NamedNumericalValue, P1Data} from "../p1-meter-api/p1-data.model";
 })
 export class PowerInjectionGraphComponent {
 
-  graphConfigurationOptions = this.configuredOptions();
-  graphUpdatedSeries = this.createGraphSeries();
-
   get powerInjection(): NamedNumericalValue {
     return this._powerInjection;
   }
@@ -23,7 +20,11 @@ export class PowerInjectionGraphComponent {
     this.graphUpdatedSeries = this.createGraphSeries();
   }
 
-  private readonly amountOfPowerInjectionHistoryToKeep = 60 * 15;
+  @Input() graphBufferSizeInMinutes!: number;
+
+  graphConfigurationOptions = this.configuredOptions();
+  graphUpdatedSeries = this.createGraphSeries();
+
   private powerInjectionHistory: any[] = [];
   private _powerInjection!: NamedNumericalValue;
 
@@ -44,7 +45,7 @@ export class PowerInjectionGraphComponent {
   }
 
   private updatePowerInjectionHistory(newValue: NamedNumericalValue): void {
-    if (this.powerInjectionHistory.length > this.amountOfPowerInjectionHistoryToKeep) {
+    if (this.powerInjectionHistory.length > this.graphBufferSizeInMinutes * 60) {
       this.powerInjectionHistory.shift();
     }
     this.powerInjectionHistory.push(PowerInjectionGraphComponent.formatToGraphElement(newValue));

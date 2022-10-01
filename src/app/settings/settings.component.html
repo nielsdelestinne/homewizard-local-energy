@@ -1,0 +1,38 @@
+<div class="offcanvas offcanvas-end text-bg-dark show" tabindex="-1"
+     aria-labelledby="settingsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="settingsLabel">Settings</h5>
+    <a routerLink="..">
+      <i class="bi bi-x-lg text-white"></i>
+    </a>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
+
+        <div class="mb-3">
+          <label for="local-api-ip" class="form-label">Local API IP: </label>
+          <input id="local-api-ip" class="form-control" type="text" formControlName="localApiIP"
+                 aria-describedby="local-api-ip-help">
+          <div id="local-api-ip-help" class="form-text">The local IP of the P1 meter's local API</div>
+        </div>
+        <div class="mb-3">
+          <label for="graph-buffer-size-in-minutes" class="form-label">Graph buffer size (minutes): </label>
+          <input id="graph-buffer-size-in-minutes" class="form-control" type="text"
+                 formControlName="graphBufferSizeInMinutes" aria-describedby="graph-buffer-size-in-minutes-help">
+          <div id="graph-buffer-size-in-minutes-help" class="form-text">Determines the amount of visible data in the
+            graph, e.g.: 15 minutes * 1 second polling interval = 900 graph data points
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="d-grid">
+            <button *ngIf="!isClosing else closing" type="submit" class="btn btn-success btn-lg" [disabled]="!settingsForm.valid">Save changes</button>
+            <ng-template #closing>
+              <button class="btn btn-success btn-lg" disabled>Saving & closing settings</button>
+            </ng-template>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

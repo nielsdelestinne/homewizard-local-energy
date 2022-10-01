@@ -1,4 +1,18 @@
-<main *ngIf="data$ | async as data" class="mx-2 my-3 mx-lg-5 my-lg-5">
+<router-outlet></router-outlet>
+
+<header class="mx-2 mt-2 mx-lg-5 mt-lg-3">
+  <div class="container-fluid">
+    <div class="row justify-content-end">
+      <div class="col-12 text-end">
+        <a routerLink="settings">
+          <i class="bi bi-gear"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main *ngIf="data$ | async as data" class="mx-2 mb-3 mt-1 mx-lg-5 mb-lg-5 mt-lg-2">
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-lg-8 mb-3 mb-lg-5">
@@ -10,15 +24,17 @@
     </div>
     <div class="row">
       <div class="col-12 mb-3 mb-lg-5">
-        <app-power-injection-graph [powerInjection]="data.injectedPower"></app-power-injection-graph>
+        <app-power-injection-graph [powerInjection]="data.injectedPower" [graphBufferSizeInMinutes]="graphBufferSizeInMinutes"></app-power-injection-graph>
       </div>
     </div>
     <div class="row">
       <div class="col-12 col-lg-6 mb-3 mb-lg-5">
-        <app-total-power title="Injected power" theme="exported" [totalPowerT1]="data.totalExportedPowerT1" [totalPowerT2]="data.totalExportedPowerT2"></app-total-power>
+        <app-total-power title="Injected power" theme="exported" [totalPowerT1]="data.totalExportedPowerT1"
+                         [totalPowerT2]="data.totalExportedPowerT2"></app-total-power>
       </div>
       <div class="col-12 col-lg-6 mb-3 mb-lg-5">
-        <app-total-power title="Imported power" theme="imported" [totalPowerT1]="data.totalImportedPowerT1" [totalPowerT2]="data.totalImportedPowerT2"></app-total-power>
+        <app-total-power title="Imported power" theme="imported" [totalPowerT1]="data.totalImportedPowerT1"
+                         [totalPowerT2]="data.totalImportedPowerT2"></app-total-power>
       </div>
     </div>
   </div>

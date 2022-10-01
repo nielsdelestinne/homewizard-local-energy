@@ -2,16 +2,17 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map, Observable, switchMap, tap, timer} from "rxjs";
 import {P1Data, Unit} from "./p1-data.model";
+import {SettingsService} from "../settings/settings.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class P1MeterApiService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private settingsService: SettingsService) { }
 
   private readonly httpProtocol = `http`;
-  private readonly p1MeterLocalIP = '192.168.1.61';
+  private readonly p1MeterLocalIP = this.settingsService.settings().localApiIP;
   private readonly baseUrl = `${this.httpProtocol}://${this.p1MeterLocalIP}`;
 
   private readonly intervalDurationInMs = 1_000;
