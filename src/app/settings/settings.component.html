@@ -18,15 +18,26 @@
         </div>
         <div class="mb-3">
           <label for="graph-buffer-size-in-minutes" class="form-label">Graph buffer size (minutes): </label>
-          <input id="graph-buffer-size-in-minutes" class="form-control" type="text"
+          <input id="graph-buffer-size-in-minutes" class="form-control" type="number"
                  formControlName="graphBufferSizeInMinutes" aria-describedby="graph-buffer-size-in-minutes-help">
           <div id="graph-buffer-size-in-minutes-help" class="form-text">Determines the amount of visible data in the
             graph, e.g.: 15 minutes * 1 second polling interval = 900 graph data points
           </div>
         </div>
         <div class="mb-3">
+          <input class="form-check-input" formControlName="showGraphXAxisLabel" type="checkbox"
+                 id="show-graph-x-axis-label">
+          <label class="form-check-label" for="show-graph-x-axis-label" aria-describedby="show-graph-x-axis-label-help">
+            <span class="px-2">Show graph x-axis label</span></label>
+          <div id="show-graph-x-axis-label-help" class="form-text">
+            On mobile, hiding the x-axis label can improve readability of the graph.
+          </div>
+        </div>
+        <div class="mb-3">
           <div class="d-grid">
-            <button *ngIf="!isClosing else closing" type="submit" class="btn btn-success btn-lg" [disabled]="!settingsForm.valid">Save changes</button>
+            <button *ngIf="!isClosing else closing" type="submit" class="btn btn-success btn-lg"
+                    [disabled]="!settingsForm.valid">Save changes
+            </button>
             <ng-template #closing>
               <button class="btn btn-success btn-lg" disabled>Saving & closing settings</button>
             </ng-template>

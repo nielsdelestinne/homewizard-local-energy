@@ -10,6 +10,7 @@ export class SettingsService {
   private static DEFAULT_SETTINGS: Settings = {
     graphBufferSizeInMinutes: 15,
     localApiIP: '192.168.1.61',
+    showGraphXAxisLabel: true
   };
   private static DEFAULT_SETTINGS_AS_JSON: string = JSON.stringify(SettingsService.DEFAULT_SETTINGS)
 

@@ -18,15 +18,7 @@ export class AppComponent {
       return throwError(error);
     }));
 
-  constructor(private p1MeterApiService: P1MeterApiService, private settingsService: SettingsService) {
-  }
-
-  get graphBufferSizeInMinutes(): number {
-    return this.settingsService.settings().graphBufferSizeInMinutes;
-  }
-
-  get localApiIP(): string {
-    return this.settingsService.settings().localApiIP;
+  constructor(private p1MeterApiService: P1MeterApiService, public settingsService: SettingsService) {
   }
 
   refresh() {

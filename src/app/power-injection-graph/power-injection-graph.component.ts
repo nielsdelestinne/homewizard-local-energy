@@ -1,14 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {tap} from "rxjs";
-import {P1MeterApiService} from "../p1-meter-api/p1-meter-api.service";
-import {NamedNumericalValue, P1Data} from "../p1-meter-api/p1-data.model";
+import {NamedNumericalValue} from "../p1-meter-api/p1-data.model";
+import {Settings} from "../settings/settings.model";
 
 @Component({
   selector: 'app-power-injection-graph',
   templateUrl: './power-injection-graph.component.html',
   styleUrls: ['./power-injection-graph.component.scss']
 })
-export class PowerInjectionGraphComponent {
+export class PowerInjectionGraphComponent implements OnInit {
 
   get powerInjection(): NamedNumericalValue {
     return this._powerInjection;
@@ -20,13 +19,7 @@ export class PowerInjectionGraphComponent {
     this.graphUpdatedSeries = this.createGraphSeries();
   }
 
-  @Input() graphBufferSizeInMinutes!: number;
-
-  graphConfigurationOptions = this.configuredOptions();
-  graphUpdatedSeries = this.createGraphSeries();
-
-  private powerInjectionHistory: any[] = [];
-  private _powerInjection!: NamedNumericalValue;
+  @Input() settings!: Settings;
 
   readonly powerInjectionScale = {
     veryGood: {color: 'very-good', icon: 'bi-chevron-double-up'},
@@ -34,6 +27,17 @@ export class PowerInjectionGraphComponent {
     neutral: {color: 'neutral', icon: 'bi-chevron-down'},
     bad: {color: 'bad', icon: 'bi-chevron-double-down'},
     veryBad: {color: 'very-bad', icon: 'bi-exclamation-octagon-fill'},
+  }
+
+  graphConfigurationOptions: any;
+  graphUpdatedSeries: any;
+
+  private powerInjectionHistory: any[] = [];
+  private _powerInjection!: NamedNumericalValue;
+
+  ngOnInit(): void {
+    this.graphConfigurationOptions = this.configuredOptions();
+    this.graphUpdatedSeries = this.createGraphSeries();
   }
 
   private createGraphSeries(): any {
@@ -45,7 +49,7 @@ export class PowerInjectionGraphComponent {
   }
 
   private updatePowerInjectionHistory(newValue: NamedNumericalValue): void {
-    if (this.powerInjectionHistory.length > this.graphBufferSizeInMinutes * 60) {
+    if (this.powerInjectionHistory.length > (this.settings?.graphBufferSizeInMinutes || 15) * 60) {
       this.powerInjectionHistory.shift();
     }
     this.powerInjectionHistory.push(PowerInjectionGraphComponent.formatToGraphElement(newValue));
@@ -84,6 +88,7 @@ export class PowerInjectionGraphComponent {
       },
       xAxis: {
         type: 'time',
+        show: this.settings.showGraphXAxisLabel,
         axisLine: {
           lineStyle: {
             color: 'rgb(255,255,255)',

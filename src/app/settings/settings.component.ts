@@ -21,7 +21,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.settingsForm = new FormGroup({
       localApiIP: new FormControl(this.settingsService.settings().localApiIP, Validators.required),
-      graphBufferSizeInMinutes: new FormControl(this.settingsService.settings().graphBufferSizeInMinutes, Validators.required)
+      graphBufferSizeInMinutes: new FormControl(this.settingsService.settings().graphBufferSizeInMinutes, Validators.required),
+      showGraphXAxisLabel: new FormControl(this.settingsService.settings().showGraphXAxisLabel)
     });
   }
 
