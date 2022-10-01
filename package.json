@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && npx cap sync",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -19,6 +19,9 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@capacitor/android": "^4.3.0",
+    "@capacitor/cli": "^4.3.0",
+    "@capacitor/core": "^4.3.0",
     "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.2.1",
     "bootstrap-icons": "^1.9.1",
