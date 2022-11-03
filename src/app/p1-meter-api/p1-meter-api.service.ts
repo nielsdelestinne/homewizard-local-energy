@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {map, Observable, switchMap, tap, timer} from "rxjs";
+import {map, Observable, switchMap, timer} from "rxjs";
 import {P1Data, Unit} from "./p1-data.model";
 import {SettingsService} from "../settings/settings.service";
 
@@ -25,13 +25,13 @@ export class P1MeterApiService {
 
   private static mapToData(rawData: P1RawDataTO): P1Data {
     return {
-      injectedPower: {name: 'Injected power', value: rawData.active_power_w / -1_000, unit: Unit.Kwh},
-      totalGasInM3: {name: 'Total Gas', value: rawData.total_gas_m3, unit: Unit.m3},
-      totalExportedPowerT1: {name: 'Total exported power T1', value: rawData.total_power_export_t1_kwh, unit: Unit.Kwh},
-      totalExportedPowerT2: {name: 'Total exported power T2', value: rawData.total_power_export_t2_kwh, unit: Unit.Kwh},
-      totalImportedPowerT1: {name: 'Total imported power T1', value: rawData.total_power_import_t1_kwh, unit: Unit.Kwh},
-      totalImportedPowerT2: {name: 'Total imported power T2', value: rawData.total_power_import_t2_kwh, unit: Unit.Kwh},
-      wifiStrength: {name: 'Wifi strength', value: rawData.wifi_strength, unit: Unit.percentage}
+      injectedPower: {name: 'Injected power', value: (rawData.active_power_w || 0) / -1_000, unit: Unit.Kwh},
+      totalGasInM3: {name: 'Total Gas', value: rawData.total_gas_m3 || 0, unit: Unit.m3},
+      totalExportedPowerT1: {name: 'Total exported power T1', value: rawData.total_power_export_t1_kwh || 0, unit: Unit.Kwh},
+      totalExportedPowerT2: {name: 'Total exported power T2', value: rawData.total_power_export_t2_kwh || 0, unit: Unit.Kwh},
+      totalImportedPowerT1: {name: 'Total imported power T1', value: rawData.total_power_import_t1_kwh || 0, unit: Unit.Kwh},
+      totalImportedPowerT2: {name: 'Total imported power T2', value: rawData.total_power_import_t2_kwh || 0, unit: Unit.Kwh},
+      wifiStrength: {name: 'Wifi strength', value: rawData.wifi_strength || 0, unit: Unit.percentage}
     }
   }
 
@@ -42,18 +42,18 @@ export class P1MeterApiService {
  Only to be used by the service internally
  */
 type P1RawDataTO = Readonly<{
-  active_power_l1_w: number;
-  active_power_l2_w: number;
-  active_power_l3_w: number;
-  active_power_w: number;
-  gas_timestamp: number;
-  meter_model: string;
-  smr_version: number;
-  total_gas_m3: number;
-  total_power_export_t1_kwh: number;
-  total_power_export_t2_kwh: number;
-  total_power_import_t1_kwh: number;
-  total_power_import_t2_kwh: number;
-  wifi_ssid: string;
-  wifi_strength: number
+  active_power_l1_w?: number;
+  active_power_l2_w?: number;
+  active_power_l3_w?: number;
+  active_power_w?: number;
+  gas_timestamp?: number;
+  meter_model?: string;
+  smr_version?: number;
+  total_gas_m3?: number;
+  total_power_export_t1_kwh?: number;
+  total_power_export_t2_kwh?: number;
+  total_power_import_t1_kwh?: number;
+  total_power_import_t2_kwh?: number;
+  wifi_ssid?: string;
+  wifi_strength?: number
 }>
