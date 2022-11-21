@@ -29,6 +29,12 @@ $font-weight-base: 600;
 
 @import "../node_modules/bootstrap/scss/utilities/api";
 
+h2 {
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--bs-white);
+}
+
 .very-good {
   background-color: var(--bs-teal);
 }
@@ -49,6 +55,19 @@ $font-weight-base: 600;
   background-color: var(--bs-red);
 }
 
+.text-color-black {
+  color: var(--bs-black);
+}
+
 .card {
   box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px;
+}
+
+.text-muted {
+  color: var(--bs-gray-200) !important;
+}
+
+.svg-background {
+  background-repeat: no-repeat;
+  background-position: right;
 }

@@ -61,7 +61,7 @@ For building the Android app as an APK, open Android Studio using:
 
 ## Development Todos
 - [ ] Improve reuse between both power-injection components
-- [ ] Improve reuse between cards (all components use & style them separately now)
+- [x] Improve reuse between cards (all components use & style them separately now)
 - [ ] Create GitHub action for building artifact and releasing
 - [ ] Add widget(s) for Gas
 - [x] Create global changeable settings (interval, p1 meter IP, How long to keep graph (15m),...)

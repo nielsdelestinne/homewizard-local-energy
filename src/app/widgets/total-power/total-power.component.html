@@ -8,15 +8,18 @@
   </div>
 
   <div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning text-color-black" role="progressbar" aria-label="Day"
+    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-label="Day"
          style="width: {{totalPowerT1.value / (totalPowerT1.value + totalPowerT2.value) * 100}}%"
-         [attr.aria-valuenow]="totalPowerT1.value / (totalPowerT1.value + totalPowerT2.value) * 100" aria-valuemin="0" aria-valuemax="100">
-      Day
-      {{totalPowerT1.value / (totalPowerT1.value + totalPowerT2.value) * 100 | number: '1.0-0'}}%
+         [attr.aria-valuenow]="totalPowerT1.value / (totalPowerT1.value + totalPowerT2.value) * 100" aria-valuemin="0"
+         aria-valuemax="100">
+      <span class="text-color-black">Day
+        {{totalPowerT1.value / (totalPowerT1.value + totalPowerT2.value) * 100 | number: '1.0-0'}}%</span>
     </div>
-    <div class="progress-bar progress-bar-striped progress-bar-animated bg-black" role="progressbar" aria-label="Night/Weekend"
+    <div class="progress-bar progress-bar-striped progress-bar-animated bg-black" role="progressbar"
+         aria-label="Night/Weekend"
          style="width: {{totalPowerT2.value / (totalPowerT1.value + totalPowerT2.value) * 100}}%"
-         [attr.aria-valuenow]="totalPowerT2.value / (totalPowerT1.value + totalPowerT2.value) * 100" aria-valuemin="0" aria-valuemax="100">
+         [attr.aria-valuenow]="totalPowerT2.value / (totalPowerT1.value + totalPowerT2.value) * 100" aria-valuemin="0"
+         aria-valuemax="100">
       N/W {{totalPowerT2.value / (totalPowerT1.value + totalPowerT2.value) * 100 | number: '1.0-0'}}%
     </div>
   </div>
