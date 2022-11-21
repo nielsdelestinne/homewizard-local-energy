@@ -15,7 +15,7 @@ export type NamedNumericalValue = Readonly<{
 }>
 
 export enum Unit {
-  Kwh = "Kwh",
+  kWh = "kWh",
   m3 = "m3",
   percentage = "%",
 }

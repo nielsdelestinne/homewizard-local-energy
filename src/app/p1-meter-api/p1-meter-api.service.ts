@@ -25,12 +25,12 @@ export class P1MeterApiService {
 
   private static mapToData(rawData: P1RawDataTO): P1Data {
     return {
-      injectedPower: {name: 'Injected power', value: (rawData.active_power_w || 0) / -1_000, unit: Unit.Kwh},
+      injectedPower: {name: 'Injected power', value: (rawData.active_power_w || 0) / -1_000, unit: Unit.kWh},
       totalGasInM3: {name: 'Total Gas', value: rawData.total_gas_m3 || 0, unit: Unit.m3},
-      totalExportedPowerT1: {name: 'Total exported power T1', value: rawData.total_power_export_t1_kwh || 0, unit: Unit.Kwh},
-      totalExportedPowerT2: {name: 'Total exported power T2', value: rawData.total_power_export_t2_kwh || 0, unit: Unit.Kwh},
-      totalImportedPowerT1: {name: 'Total imported power T1', value: rawData.total_power_import_t1_kwh || 0, unit: Unit.Kwh},
-      totalImportedPowerT2: {name: 'Total imported power T2', value: rawData.total_power_import_t2_kwh || 0, unit: Unit.Kwh},
+      totalExportedPowerT1: {name: 'Total exported power T1', value: rawData.total_power_export_t1_kWh || 0, unit: Unit.kWh},
+      totalExportedPowerT2: {name: 'Total exported power T2', value: rawData.total_power_export_t2_kWh || 0, unit: Unit.kWh},
+      totalImportedPowerT1: {name: 'Total imported power T1', value: rawData.total_power_import_t1_kWh || 0, unit: Unit.kWh},
+      totalImportedPowerT2: {name: 'Total imported power T2', value: rawData.total_power_import_t2_kWh || 0, unit: Unit.kWh},
       wifiStrength: {name: 'Wifi strength', value: rawData.wifi_strength || 0, unit: Unit.percentage}
     }
   }
@@ -50,10 +50,10 @@ type P1RawDataTO = Readonly<{
   meter_model?: string;
   smr_version?: number;
   total_gas_m3?: number;
-  total_power_export_t1_kwh?: number;
-  total_power_export_t2_kwh?: number;
-  total_power_import_t1_kwh?: number;
-  total_power_import_t2_kwh?: number;
+  total_power_export_t1_kWh?: number;
+  total_power_export_t2_kWh?: number;
+  total_power_import_t1_kWh?: number;
+  total_power_import_t2_kWh?: number;
   wifi_ssid?: string;
   wifi_strength?: number
 }>

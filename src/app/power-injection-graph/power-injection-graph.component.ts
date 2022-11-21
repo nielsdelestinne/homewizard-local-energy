@@ -80,7 +80,7 @@ export class PowerInjectionGraphComponent implements OnInit {
         trigger: 'axis',
         formatter: (params: any) => {
           params = params[0];
-          return `${params['name']} | ${params['value'][1]} Kwh`;
+          return `${params['name']} | ${params['value'][1]} kWh`;
         },
         axisPointer: {
           animation: true

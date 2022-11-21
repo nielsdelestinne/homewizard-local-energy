@@ -31,12 +31,12 @@ describe('P1MeterApiService', () => {
 
     // Then
     expect(actualData).toEqual({
-      injectedPower: {name: 'Injected power', value: 88 / -1_000, unit: Unit.Kwh},
+      injectedPower: {name: 'Injected power', value: 88 / -1_000, unit: Unit.kWh},
       totalGasInM3: {name: 'Total Gas', value: 25, unit: Unit.m3},
-      totalExportedPowerT1: {name: 'Total exported power T1', value: 10, unit: Unit.Kwh},
-      totalExportedPowerT2: {name: 'Total exported power T2', value: 11, unit: Unit.Kwh},
-      totalImportedPowerT1: {name: 'Total imported power T1', value: 15, unit: Unit.Kwh},
-      totalImportedPowerT2: {name: 'Total imported power T2', value: 16, unit: Unit.Kwh},
+      totalExportedPowerT1: {name: 'Total exported power T1', value: 10, unit: Unit.kWh},
+      totalExportedPowerT2: {name: 'Total exported power T2', value: 11, unit: Unit.kWh},
+      totalImportedPowerT1: {name: 'Total imported power T1', value: 15, unit: Unit.kWh},
+      totalImportedPowerT2: {name: 'Total imported power T2', value: 16, unit: Unit.kWh},
       wifiStrength: {name: 'Wifi strength', value: 70, unit: Unit.percentage}
     })
 
@@ -56,12 +56,12 @@ describe('P1MeterApiService', () => {
 
     // Then
     expect(actualData).toEqual({
-      injectedPower: {name: 'Injected power', value: 0 / -1_000, unit: Unit.Kwh},
+      injectedPower: {name: 'Injected power', value: 0 / -1_000, unit: Unit.kWh},
       totalGasInM3: {name: 'Total Gas', value: 0, unit: Unit.m3},
-      totalExportedPowerT1: {name: 'Total exported power T1', value: 0, unit: Unit.Kwh},
-      totalExportedPowerT2: {name: 'Total exported power T2', value: 0, unit: Unit.Kwh},
-      totalImportedPowerT1: {name: 'Total imported power T1', value: 0, unit: Unit.Kwh},
-      totalImportedPowerT2: {name: 'Total imported power T2', value: 0, unit: Unit.Kwh},
+      totalExportedPowerT1: {name: 'Total exported power T1', value: 0, unit: Unit.kWh},
+      totalExportedPowerT2: {name: 'Total exported power T2', value: 0, unit: Unit.kWh},
+      totalImportedPowerT1: {name: 'Total imported power T1', value: 0, unit: Unit.kWh},
+      totalImportedPowerT2: {name: 'Total imported power T2', value: 0, unit: Unit.kWh},
       wifiStrength: {name: 'Wifi strength', value: 0, unit: Unit.percentage}
     })
 
@@ -82,10 +82,10 @@ describe('P1MeterApiService', () => {
     meter_model: 'P1',
     smr_version: 10,
     total_gas_m3: 25,
-    total_power_export_t1_kwh: 10,
-    total_power_export_t2_kwh: 11,
-    total_power_import_t1_kwh: 15,
-    total_power_import_t2_kwh: 16,
+    total_power_export_t1_kWh: 10,
+    total_power_export_t2_kWh: 11,
+    total_power_import_t1_kWh: 15,
+    total_power_import_t2_kWh: 16,
     wifi_ssid: 'Wifidx',
     wifi_strength: 70
   }

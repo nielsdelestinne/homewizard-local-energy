@@ -7,11 +7,11 @@ import {ColorAndIcon} from "../shared/scale/color-and-icon.model";
 })
 export class ToScaleElementUsingCurrentPowerPipe implements PipeTransform {
 
-  transform(scale: Scale, valueInKwh: number): ColorAndIcon {
-    if(valueInKwh >= 1) return scale.veryGood;
-    if(valueInKwh >= 0) return scale.good;
-    if(valueInKwh <= -2.5) return scale.veryBad;
-    if(valueInKwh <= -1.25) return scale.bad;
+  transform(scale: Scale, valueInkWh: number): ColorAndIcon {
+    if(valueInkWh >= 1) return scale.veryGood;
+    if(valueInkWh >= 0) return scale.good;
+    if(valueInkWh <= -2.5) return scale.veryBad;
+    if(valueInkWh <= -1.25) return scale.bad;
     return scale.neutral;
   }
 
