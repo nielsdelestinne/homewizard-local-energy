@@ -7,6 +7,10 @@
 /out-tsc
 /bazel-out
 
+# Android (generated)
+/android
+/target
+
 # Node
 /node_modules
 npm-debug.log

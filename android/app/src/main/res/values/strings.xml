@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">Local Energy</string>
-    <string name="title_activity_main">Local Energy</string>
-    <string name="package_name">be.niedel.energy</string>
-    <string name="custom_url_scheme">be.niedel.energy</string>
-</resources>
