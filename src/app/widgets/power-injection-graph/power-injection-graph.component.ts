@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NamedNumericalValue} from "../p1-meter-api/p1-data.model";
-import {Settings} from "../settings/settings.model";
+import {NamedNumericalValue} from "../../p1-meter-api/p1-data.model";
+import {Settings} from "../../settings/settings.model";
 
 @Component({
-  selector: 'app-power-injection-graph',
+  selector: 'app-widget-power-injection-graph',
   templateUrl: './power-injection-graph.component.html',
   styleUrls: ['./power-injection-graph.component.scss']
 })

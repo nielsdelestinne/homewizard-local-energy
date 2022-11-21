@@ -21,24 +21,24 @@
   <div class="container-fluid" *ngIf="data$ | async as data else loading">
     <div class="row">
       <div class="col-12 col-lg-8 mb-3 mb-lg-5 order-1 order-lg-1">
-        <app-power-injection [powerInjection]="data.injectedPower"></app-power-injection>
+        <app-widget-power-injection [powerInjection]="data.injectedPower"></app-widget-power-injection>
       </div>
       <div class="col-12 col-lg-4 mb-3 mb-lg-5 order-3 order-lg-2">
-        <app-wifi-strength [wifiStrength]="data.wifiStrength"></app-wifi-strength>
+        <app-widget-wifi-strength [wifiStrength]="data.wifiStrength"></app-widget-wifi-strength>
       </div>
       <div class="col-12 mb-3 mb-lg-5 order-2 order-lg-3">
-        <app-power-injection-graph [powerInjection]="data.injectedPower"
-                                   [settings]="settingsService.settings()"></app-power-injection-graph>
+        <app-widget-power-injection-graph [powerInjection]="data.injectedPower"
+                                   [settings]="settingsService.settings()"></app-widget-power-injection-graph>
       </div>
     </div>
     <div class="row">
       <div class="col-12 col-lg-6 mb-3 mb-lg-5">
-        <app-total-power title="Injected power" theme="exported" [totalPowerT1]="data.totalExportedPowerT1"
-                         [totalPowerT2]="data.totalExportedPowerT2"></app-total-power>
+        <app-widget-total-power title="Injected power" theme="exported" [totalPowerT1]="data.totalExportedPowerT1"
+                         [totalPowerT2]="data.totalExportedPowerT2"></app-widget-total-power>
       </div>
       <div class="col-12 col-lg-6 mb-3 mb-lg-5">
-        <app-total-power title="Imported power" theme="imported" [totalPowerT1]="data.totalImportedPowerT1"
-                         [totalPowerT2]="data.totalImportedPowerT2"></app-total-power>
+        <app-widget-total-power title="Imported power" theme="imported" [totalPowerT1]="data.totalImportedPowerT1"
+                         [totalPowerT2]="data.totalImportedPowerT2"></app-widget-total-power>
       </div>
     </div>
   </div>

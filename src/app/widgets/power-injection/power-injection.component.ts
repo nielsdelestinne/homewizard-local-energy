@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
-import {NamedNumericalValue} from "../p1-meter-api/p1-data.model";
+import {NamedNumericalValue} from "../../p1-meter-api/p1-data.model";
 
 @Component({
-  selector: 'app-power-injection',
+  selector: 'app-widget-power-injection',
   templateUrl: './power-injection.component.html',
   styleUrls: ['./power-injection.component.scss']
 })

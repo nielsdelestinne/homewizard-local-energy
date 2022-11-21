@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {NamedNumericalValue} from "../p1-meter-api/p1-data.model";
+import {Component, Input} from '@angular/core';
+import {NamedNumericalValue} from "../../p1-meter-api/p1-data.model";
 
 @Component({
-  selector: 'app-total-power',
+  selector: 'app-widget-total-power',
   templateUrl: './total-power.component.html',
   styleUrls: ['./total-power.component.scss']
 })

@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Scale} from "../shared/scale/scale.model";
-import {ColorAndIcon} from "../shared/scale/color-and-icon.model";
+import {Scale} from "../../shared/scale/scale.model";
+import {ColorAndIcon} from "../../shared/scale/color-and-icon.model";
 
 @Pipe({
   name: 'toScaleElementUsingCurrentPower'

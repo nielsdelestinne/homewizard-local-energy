@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {NamedNumericalValue} from "../p1-meter-api/p1-data.model";
+import {Component, Input} from '@angular/core';
+import {NamedNumericalValue} from "../../p1-meter-api/p1-data.model";
 
 @Component({
-  selector: 'app-wifi-strength',
+  selector: 'app-widget-wifi-strength',
   templateUrl: './wifi-strength.component.html',
   styleUrls: ['./wifi-strength.component.scss']
 })
