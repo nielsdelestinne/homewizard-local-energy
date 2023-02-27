@@ -60,10 +60,16 @@ For building the Android app as an APK, open Android Studio using:
 - `npm run android`
 
 ## Development Todos
-- [ ] Improve reuse between both power-injection components
 - [ ] Improve reuse between cards (all components use & style them separately now)
 - [ ] Create GitHub action for building artifact and releasing
 - [ ] Add widget(s) for Gas
-- [x] Create global changeable settings (interval, p1 meter IP, How long to keep graph (15m),...)
-- [x] Format hours, minutes, seconds with leading zero's in tooltip of graph
-- [x] Remove bootstrap component library
+- [ ] Create PWA
+  - Allow to install using URL
+  - Local storage (what are the limitation in Mb?)
+  - Throw out Capacitor & Android 
+- [ ] Update Angular & co
+- [ ] Migrate to standalone components
+- Standalone server
+  - Raspberry PI
+  - SQLite
+  - Node-based backend
